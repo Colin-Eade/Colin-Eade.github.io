@@ -25,12 +25,12 @@
         let SecondString = `${FirstString} the main paragraph.`;
         MainParagraph.textContent = SecondString;
 
-        MainParagraph.appendChild(MainParagraph);
+        MainContent.appendChild(MainParagraph);
 
         let DocumentBody = document.body;
 
         let Article = document.createElement("article");
-        let ArticleParagraph = `<p id="ArticleParagraph" class="mt-3">This is my article paragraph</p>`;
+        let ArticleParagraph = `<p id="ArticleParagraph" class="mt-3">This is my article paragraph.</p>`;
         Article.setAttribute("class", "container");
         Article.innerHTML = ArticleParagraph;
 
