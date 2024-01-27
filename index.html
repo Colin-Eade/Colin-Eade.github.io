@@ -1,8 +1,18 @@
+<!--
+    Name: Colin Eade (ID:100329105) and Megan Clarke (ID:100881229).
+    Date: January 26, 2024.
+    File: index.html
+    Description: This is the index page (home) for the Harmony Hub Website that we will be building on throughout
+    the semester in INFT2202. It utilizes html, boostrap, and is linked to a JavaScript file in order to load and
+    change dynamically utilizing client side scripting.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Harmony Hub - Home</title>
 
     <!-- CSS Section -->
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -10,41 +20,107 @@
     <link rel="stylesheet" href="./content/app.css">
 
 </head>
-<body>
 
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html"><i class="fa-solid fa-house"></i> INFT2202</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="product.html"><i class="fa-solid fa-bag-shopping"></i> Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="service.html"><i class="fa-solid fa-handshake-angle"></i> Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html"><i class="fa-solid fa-info"></i> About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html"><i class="fa-solid fa-phone"></i> Contact Us</a>
-                        </li>
-                    </ul>
+<!-- Ensures the body fills the whole viewport -->
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Main Content -->
+    <!-- Ensures footer is forced to bottom of viewport -->
+    <main class="flex-grow-1">
+
+        <!-- Slide Show -->
+        <!-- Container-fluid to span bg color behind slideshow-->
+        <div id="homeCarouselAndBG" class="container-fluid bg-body-tertiary pb-3">
+            <!-- Container to contain carousel -->
+            <div id="homeCarousel" class="carousel slide container" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
                 </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/home/home.jpg" class="d-block w-100" alt="Slide 1 Image">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 style="font-size: 86px;">Welcome to Harmony Hub!</h1>
+                            <p>Bringing the community together since 2024.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/home/portfolio.jpg" class="d-block w-100" alt="Slide 2 Image">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Check Out Our Portfolio</h1>
+                            <p>Learn about the projects we are currently working on.</p>
+                            <a href="./portfolio.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/home/services.jpg" class="d-block w-100" alt="Slide 3 Image">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>View Our Services We Offer</h1>
+                            <p>Experience a world of services tailored just for you.</p>
+                            <a href="./services.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/home/team.jpg" class="d-block w-100" alt="Slide 4 Image">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Learn About Our Team</h1>
+                            <p>Meet the incredible individuals who make up our passionate team.</p>
+                            <a href="./team.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/home/blog.jpg" class="d-block w-100" alt="Slide 5 Image">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Find Out What's New</h1>
+                            <p>Stay updated with the latest news and insightful blog posts.</p>
+                            <a href="./blog.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-        </nav>
-    </header>
+        </div>
 
-    <main class="container">
-        <h1 class="mb-5">Welcome to our Website</h1>
-        <button id="AboutUsBtn" class="btn btn-primary">About Us</button>
+        <!-- container to contain rest of content -->
+        <div class="container">
+            <!-- Quick Links -->
+            <div id="homeQuickLinks" class="list-group mt-3">
+                <div class="list-group-item bg-body-tertiary text-body-primary py-4"><strong>QUICK LINKS</strong></div>
+                <a href="portfolio.html" class="list-group-item list-group-item-action py-4">
+                    <h5>Portfolio</h5>
+                    <span>Learn about the projects we are currently working on.</span>
+                </a>
+                <a href="services.html" class="list-group-item list-group-item-action py-4">
+                    <h5>Services</h5>
+                    <span>Experience a world of services tailored just for you.</span>
+                </a>
+                <a href="team.html" class="list-group-item list-group-item-action py-4">
+                    <h5>Team</h5>
+                    <span>Meet the incredible individuals who make up our passionate team.</span>
+                </a>
+                <a href="blog.html" class="list-group-item list-group-item-action py-4">
+                    <h5>News</h5>
+                    <span>Stay updated with the latest news and insightful blog posts.</span>
+                </a>
+            </div>
+        </div>
+
     </main>
 
     <!-- Scripting Section -->
@@ -53,4 +129,5 @@
     <script src="./scripts/app.js"></script>
 
 </body>
+
 </html>

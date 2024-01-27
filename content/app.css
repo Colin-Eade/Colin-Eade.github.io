@@ -1,0 +1,127 @@
+/* Text and Link Styling */
+
+/* Styles for links with a dashed underline by default
+   and changes to a solid underline on hover */
+.dashed-underline {
+    text-decoration: none;
+    border-bottom: 1px dashed;
+}
+.dashed-underline:hover {
+    border-bottom: 1px solid;
+}
+
+/* Applies underline to a link on hover */
+.underline-hover:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+
+/* Base style for header */
+main {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Header Styles */
+
+/* Base style for header */
+header {
+    animation: slideDown 0.5s ease-out;
+}
+
+/* Carousel Styles */
+
+/* Base styles for the carousel captions */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: 50px;
+    margin-bottom: 50px;
+}
+
+/* Adjusts font size of the heading in the carousel caption */
+.carousel-caption h1 {
+    font-size: 50px;
+}
+
+/* Adjusts font size of the paragraph in the carousel caption */
+.carousel-caption p {
+    font-size: 25px;
+}
+
+/* Styles for the link button inside the carousel caption */
+.carousel-caption a.btn {
+    font-size: 20px;
+    border-radius: 0;
+}
+
+#homeCarouselAndBG {
+    animation: slideDown 0.5s ease-out;
+}
+
+/* Quick Links Styles */
+#homeQuickLinks {
+    animation: slideRight 0.5s ease-out;
+}
+
+/* Team Page Styles */
+
+/* Sets a maximum width for profile images on the Team page */
+.img-max-width {
+    max-width: 300px;
+}
+
+/* Modal Styling */
+
+/* Ensures text in modals breaks and wraps correctly */
+.modal-body {
+    word-break: break-word; /* Allows long words to break and wrap */
+    overflow-wrap: break-word; /* Ensures text wraps in the container */
+}
+
+/* Card Styles */
+
+/* Styles for cards on hover */
+.team-card:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+/* Animation Keyframes */
+
+/* Defines a 'slideDown' animation for elements */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Defines a 'slideDown' animation for elements */
+@keyframes slideRight {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Defines a 'fadeIn' animation for elements */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
