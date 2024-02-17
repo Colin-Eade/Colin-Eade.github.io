@@ -1,0 +1,53 @@
+<!--
+    Name: Colin Eade (ID:100329105) and Megan Clarke (ID:100881229).
+    Date: January 26, 2024.
+    File: portfolio.html
+    Description: This this is the portfolio page for the Harmony Hub website that displays some projects that may
+    be worked on by a community hub. This page utilizes JS to dynamically create project cards and display in a grid.
+    A load more button allows the user to view two more projects at a time.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Harmony Hub - Portfolio</title>
+
+    <!-- CSS Section -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="./content/app.css">
+
+</head>
+
+<!-- Ensures the body fills the whole viewport -->
+
+<body class="d-flex flex-column min-vh-100">
+
+<!-- Main Content -->
+<!-- Ensures footer is forced to bottom of viewport -->
+<main class="container flex-grow-1">
+
+    <h1 class="mt-3 text-center">Our Project Portfolio</h1>
+
+    <div class="mt-5 ms-4 me-4 justify-content-center">
+        <div class="row row-cols-1 row-cols-md-2 g-4" id="project-container">
+            <!-- Project Cards go here     -->
+        </div>
+
+        <div class="d-flex justify-content-center p-3">
+            <button id="load-more-button" type="button" class="btn btn-primary">Load More</button>
+        </div>
+    </div>
+
+</main>
+
+<!-- Scripting Section -->
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./scripts/app.js"></script>
+
+</body>
+
+</html>
