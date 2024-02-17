@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact Us</title>
+    <title>Edit Contact</title>
 
     <!-- CSS Section -->
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -15,8 +15,8 @@
     <header>
     </header>
 
-    <div class="container">
-        <h1 class="mb-5">Contact Us</h1>
+    <main class="container">
+        <h1 class="mb-5">Edit Contact</h1>
 
         <div id="messageArea"></div>
 
@@ -42,31 +42,16 @@
                            aria-describedby="Email Address" aria-label="Email Address Input" required>
                 </div>
 
-                <div class="input-group mb-3">
-                    <span  class="input-group-text">Your Message</span>
-                    <input id="message" name="message" class="form-control"
-                           aria-describedby="Message Area" aria-label="Message Area Input">
-                </div>
-
-                <div class="input-group mb-3">
-                    <input id="subscribeCheck" type="checkbox" class="form-check-input">
-                    <label class="form-check-label" for="subscribeCheck">Subscribe to our contact list</label>
-                </div>
-
-                <button id="sendButton" type="submit" class="btn btn-primary">
-                    <i class="fa-solid fa-envelope"></i> Submit</button>
+                <button id="editButton" type="submit" class="btn btn-primary">
+                    <i class="fas fa-edit"></i> Edit</button>
                 <button id="cancelButton" type="reset" class="btn btn-warning">
                     <i class="fa-solid fa-rotate-left"></i> Cancel</button>
 
             </form>
 
-            <div class="col-lg-4 col-md-4">
-                <a href="contact-list.html" class="btn btn-primary"><i class="fa-solid fa-users"></i> Show contact list</a>
-            </div>
-
         </div>
 
-    </div>
+    </main>
 
     <!-- Scripting Section -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
