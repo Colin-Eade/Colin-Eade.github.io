@@ -478,7 +478,7 @@ function formatDate(dateString) {
             }
         });
 
-        //NewsAPIFetch(searchInput, page);
+        NewsAPIFetch(searchInput, page);
 
         $("#newsSearchButton").on("click", () => {
             searchInput = $("#newsSearchInput").val();
