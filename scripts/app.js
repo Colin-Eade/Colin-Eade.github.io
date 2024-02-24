@@ -465,12 +465,12 @@ function formatDate(dateString) {
     /**
      * Initializes the home page by setting up event listeners for search and scrolling actions.
      * This function sets up the behavior for the search input, search button, and scroll buttons
-     * for navigating through news articles fetched from NewsAPI
+     * for navigating through news articles fetched from GNews API.
      */
     function DisplayHomePage(){
         console.log("Called DisplayHomePage...");
         let page = 1;
-        let searchInput = "Durham Region Ontario";
+        let searchInput = "CBC News";
 
         $("#newsSearchInput").on('keydown', function(e) {
             if (e.key === "Enter") {
@@ -478,7 +478,7 @@ function formatDate(dateString) {
             }
         });
 
-        NewsAPIFetch(searchInput, page);
+        GNewsAPIFetch(searchInput, page);
 
         $("#newsSearchButton").on("click", () => {
             searchInput = $("#newsSearchInput").val();
@@ -486,7 +486,7 @@ function formatDate(dateString) {
 
             $("#homeArticleArea").empty();
 
-            NewsAPIFetch(searchInput, page);
+            GNewsAPIFetch(searchInput, page);
         });
 
         $("#newsScrollDownButton").on("click", () => {
@@ -494,7 +494,7 @@ function formatDate(dateString) {
 
             $("#homeArticleArea").empty();
 
-            NewsAPIFetch(searchInput, page);
+            GNewsAPIFetch(searchInput, page);
         });
 
         $("#newsScrollUpButton").on("click", () => {
@@ -502,100 +502,98 @@ function formatDate(dateString) {
 
             $("#homeArticleArea").empty();
 
-            NewsAPIFetch(searchInput, page);
+            GNewsAPIFetch(searchInput, page);
         });
     }
 
     /**
-     * Fetches news articles based on the specified keywords and page number using the NewsAPI.
+     * Fetches news articles based on the specified keywords and page number using the GNews API.
      * @param keywords The search keywords used to fetch relevant news articles.
      * @param page The current page number of the API fetch.
      */
-    function NewsAPIFetch(keywords, page) {
-        const pageSize = 5
-        const key = "18c00679c61248edbdf53cfaeee600c0";
-        let url =  `https://newsapi.org/v2/everything?q=${keywords}&pageSize=${pageSize}&page=${page}&apiKey=${key}`;
+    function GNewsAPIFetch(keywords, page) {
+        const pageSize = 3
+        const language = "en";
+        const key = "ba7d1c40045850f7ee5b6113b2728729";
+        let url = `https://gnews.io/api/v4/search?q=${keywords}&max=${pageSize}&page=${page}&lang=${language}&apikey=${key}`;
 
         // Performs the GET request to the NewsAPI
         $.get(url, function(data) {
-            NewsAPIFetchSuccess(data, page, pageSize);
-        }).fail(NewsAPIFail)
+            GNewsAPIFetchSuccess(data, page, pageSize);
+        }).fail(GNewsAPIFail)
     }
 
     /**
-     * Handles the successful fetch of news articles from the NewsAPI, and populates the UI with articles.
-     * @param data The JSON response from NewsAPI containing the articles and metadata.
+     * Handles the successful fetch of news articles from the GNews API, and populates the UI with articles.
+     * @param data The JSON response from GNews API containing the articles and metadata.
      * @param page The current page number of the API fetch.
      * @param pageSize The number of articles per API fetch.
      */
-    function NewsAPIFetchSuccess(data, page, pageSize) {
+    function GNewsAPIFetchSuccess(data, page, pageSize) {
 
         let scrollDownButton = $("#newsScrollDownButton");
         let scrollUpButton = $("#newsScrollUpButton");
 
-        // Check is NewsAPI JSON returned "ok" status
-        if (data.status === "ok") {
+        // Check if any results returned
+        if (data.totalArticles) {
 
-            // Check if any results returned
-            if (data.totalResults) {
+            // Enable scroll buttons
+            scrollDownButton.removeClass("disabled");
+            scrollUpButton.removeClass("disabled");
 
-                // Enable scroll buttons
-                scrollDownButton.removeClass("disabled");
-                scrollUpButton.removeClass("disabled");
+            // Calculate the max amount of pages based on total results
+            let maxPages = Math.ceil(data.totalArticles / pageSize);
 
-                // Calculate the max amount of pages based on total results
-                let maxPages = Math.ceil(data.totalResults / pageSize);
-
-                // Disable scroll up on first page
-                if (page <= 1) {
-                    scrollUpButton.addClass("disabled");
-                }
-
-                // Disable scroll down on last page
-                if (page >= maxPages) {
-                    scrollDownButton.addClass("disabled");
-                }
-
-                // Iterate through each article in the response and construct an HTML display
-                for (const article of data.articles) {
-                    let articleHtml = `
-                        <a href="${article.url}" class="list-group-item list-group-item-action mt-1 border-top"
-                        target="_blank" rel="noopener noreferrer">
-                            <h5 class="mb-1">${article.title || "No title"}</h5>
-                            <p class="mb-1 text-muted small">
-                                ${new Date(article.publishedAt).toLocaleDateString() || "No date"}
-                                 | ${article.source.name || "No source name"} 
-                                 | ${article.author || "No author"}
-                            </p>
-                            <p class="mb-1">${article.description || "No description"}</p>
-                        </a>`;
-
-                    // Add the article data to the home page article area
-                    $('#homeArticleArea').append(articleHtml);
-
-                }
-            } else {
-
-                // Disable scroll buttons if no results are found
-                scrollDownButton.addClass("disabled");
+            // Disable scroll up on first page
+            if (page <= 1) {
                 scrollUpButton.addClass("disabled");
+            }
 
-                // Display a message to the user in the articles area
+            // Disable scroll down on last page
+            if (page >= maxPages) {
+                scrollDownButton.addClass("disabled");
+            }
+
+            // Iterate through each article in the response and construct an HTML display
+            for (const article of data.articles) {
                 let articleHtml = `
-                        <div class="list-group-item mt-1">
-                            <p class="mb-1">No articles to display. Please try another search.</p>
-                        </div>`;
+                    <a href="${article.url}" class="list-group-item list-group-item-action mt-1 border-top"
+                    target="_blank" rel="noopener noreferrer">
+                        <h5 class="mb-1">${article.title || "No title"}</h5>
+                        <p class="mb-1 text-muted small">
+                            ${new Date(article.publishedAt).toLocaleDateString() || "No date"}
+                             | ${article.source.name || "No source name"} 
+                             | ${article.source.url || "No source URL"}
+                        </p>
+                        <p class="mb-1">${article.description || "No description"}</p>
+                    </a>`;
 
+                // Add the article data to the home page article area
                 $('#homeArticleArea').append(articleHtml);
             }
+        } else {
+
+            // Disable scroll buttons if no results are found
+            scrollDownButton.addClass("disabled");
+            scrollUpButton.addClass("disabled");
+
+            // Display a message to the user in the articles area
+            let articleHtml = `
+                    <div class="list-group-item mt-1">
+                        <p class="mb-1">No articles to display. Please try another search.</p>
+                    </div>`;
+
+            $('#homeArticleArea').append(articleHtml);
         }
     }
 
     /**
-     * Handles failures when fetching news articles from the NewsAPI.
+     * Handles failures when fetching news articles from the GNews API.
      * @param data The error response from the News API containing the error details or status.
      */
-    function NewsAPIFail(data) {
+    function GNewsAPIFail(data) {
+
+        console.log(data);
 
         // Disable scroll buttons
         $("#newsScrollDownButton").addClass("disabled");
@@ -621,8 +619,18 @@ function formatDate(dateString) {
                           </p>`;
 
             // Error message if the API returned a specific one
-        } else if (data.responseJSON && data.responseJSON.message) {
-            errorHtml += `<p class="mb-1">${data.responseJSON.message}</p>`;
+        } else if (data.responseJSON && data.responseJSON.errors) {
+
+            // if errors are in an array
+            if (Array.isArray(data.responseJSON.errors)) {
+
+                for (const error of data.responseJSON.errors) {
+                    errorHtml += `<p class="mb-1">${error}</p>`;
+                }
+                // If errors are not in an array
+            } else {
+                errorHtml += `<p class="mb-1">${data.responseJSON.errors.q}</p>`;
+            }
 
             // Error message for any other error
         } else {
@@ -631,7 +639,6 @@ function formatDate(dateString) {
         errorHtml += `</div>`;
         $('#homeArticleArea').append(errorHtml);
     }
-
     //endregion
 
     //region Portfolio Page Functions
