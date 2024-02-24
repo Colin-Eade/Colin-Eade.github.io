@@ -1,3 +1,6 @@
 "use strict";
 
-let core;
+/**
+ * Harmony Hub namespace
+ */
+let HarmonyHub;

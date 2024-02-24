@@ -1,0 +1,128 @@
+{
+  "pages": {
+    "gallery": "/gallery.html",
+    "events": "/events.html"
+  },
+  "events": [
+    {
+      "eventId": "000001",
+      "eventName": "Clothing Drive",
+      "eventLocation": "Multi-Purpose Room",
+      "eventDate": "2022-01-22",
+      "eventImage": "img/eventPhotos/clothingDrive.png",
+      "eventDescription": "Join us for a clothing drive to support those in need in our community. Please bring gently used clothing items to donate."
+    },
+    {
+      "eventId": "000002",
+      "eventName": "Kids in the Garden",
+      "eventLocation": "Community Garden",
+      "eventDate": "2024-06-13",
+      "eventImage": "img/eventPhotos/kidsGarden.png",
+      "eventDescription": "Kids are invited to explore the wonders of gardening in our community garden. Learn about plants, insects, and more!"
+    },
+    {
+      "eventId": "000003",
+      "eventName": "Thanksgiving Food Drive",
+      "eventLocation": "Multi-Purpose Room",
+      "eventDate": "2023-10-09",
+      "eventImage": "img/eventPhotos/foodDrive.png",
+      "eventDescription": "Help us collect food items to make Thanksgiving special for families in need. Every donation counts!"
+    },
+    {
+      "eventId": "000004",
+      "eventName": "Community Garden Grand Opening",
+      "eventLocation": "Community Garden",
+      "eventDate": "2021-07-21",
+      "eventImage": "img/eventPhotos/communityGarden.png",
+      "eventDescription": "Join us as we celebrate the grand opening of our community garden. Discover the beauty of nature and sustainable living."
+    },
+    {
+      "eventId": "000005",
+      "eventName": "Kids in STEM",
+      "eventLocation": "STEM Room",
+      "eventDate": "2024-06-17",
+      "eventImage": "img/eventPhotos/kidsStem.png",
+      "eventDescription": "Kids will engage in exciting STEM activities, exploring science, technology, engineering, and mathematics in a fun and interactive way."
+    },
+    {
+      "eventId": "000006",
+      "eventName": "Youth Leadership Summit",
+      "eventLocation": "Multi-Purpose Room",
+      "eventDate": "2023-11-25",
+      "eventImage": "img/eventPhotos/leadership.png",
+      "eventDescription": "Empowering youth to become leaders in their community. Join us for a day of inspiration, networking, and skill-building."
+    },
+    {
+      "eventId": "000007",
+      "eventName": "Father's Day Picnic 2023",
+      "eventLocation": "High Park Lawn",
+      "eventDate": "2023-06-18",
+      "eventImage": "img/eventPhotos/picnic.png",
+      "eventDescription": "Celebrate Father's Day with a picnic in the park! Enjoy games, food, and quality time with family and friends."
+    },
+    {
+      "eventId": "000008",
+      "eventName": "Earth Day Recycling Drive",
+      "eventLocation": "Multi-Purpose Room",
+      "eventDate": "2023-04-22",
+      "eventImage": "img/eventPhotos/recyclingDay.png",
+      "eventDescription": "Help us protect our planet by participating in our Earth Day recycling drive. Bring your recyclables and join the green movement!"
+    },
+    {
+      "eventId": "000009",
+      "eventName": "Splash Pad Grand Opening",
+      "eventLocation": "Community Splash Pad",
+      "eventDate": "2024-06-01",
+      "eventImage": "img/eventPhotos/splashPad.png",
+      "eventDescription": "Cool off at the grand opening of our new splash pad! Bring the family for a day of water fun and excitement."
+    },
+    {
+      "eventId": "000010",
+      "eventName": "Summer Camp",
+      "eventLocation": "Soccer Fields",
+      "eventDate": "2023-08-05",
+      "eventImage": "img/eventPhotos/kidsCamp.png",
+      "eventDescription": "Join us for a summer adventure at our exciting summer camp! Explore nature, make new friends, and create lasting memories."
+    },
+    {
+      "eventId": "000011",
+      "eventName": "Winter Wonderland Festival",
+      "eventLocation": "Central Park",
+      "eventDate": "2022-12-15",
+      "eventImage": "img/eventPhotos/winterFestival.png",
+      "eventDescription": "Experience the magic of winter with our Winter Wonderland Festival. Enjoy holiday lights, ice skating, and festive treats."
+    },
+    {
+      "eventId": "000012",
+      "eventName": "Annual Book Fair",
+      "eventLocation": "Library Hall",
+      "eventDate": "2023-09-10",
+      "eventImage": "img/eventPhotos/bookFair.png",
+      "eventDescription": "Discover new books and meet your favorite authors at our Annual Book Fair. A perfect event for book lovers of all ages."
+    },
+    {
+      "eventId": "000013",
+      "eventName": "Local Artist Showcase",
+      "eventLocation": "Arts Center",
+      "eventDate": "2024-07-22",
+      "eventImage": "img/eventPhotos/artistShowcase.png",
+      "eventDescription": "Join us for an exhibition featuring the work of local artists. Explore paintings, sculptures, and more in this celebration of creativity."
+    },
+    {
+      "eventId": "000014",
+      "eventName": "Outdoor Movie Night",
+      "eventLocation": "Community Park",
+      "eventDate": "2024-08-20",
+      "eventImage": "img/eventPhotos/movieNight.png",
+      "eventDescription": "Bring a blanket and enjoy an outdoor movie night under the stars. A family-friendly event featuring a popular film."
+    },
+    {
+      "eventId": "000015",
+      "eventName": "Health and Wellness Expo",
+      "eventLocation": "Expo Center",
+      "eventDate": "2024-10-05",
+      "eventImage": "img/eventPhotos/healthExpo.png",
+      "eventDescription": "Explore health and wellness at our expo. Attend workshops, try fitness classes, and learn from health experts."
+    }
+  ]
+}

@@ -1,53 +1,251 @@
-.input-group-addon:first-child
-{
-    border-right: 0;
+/* Text and Link Styling */
+
+.large-icon {
+    font-size: 6rem;
 }
 
-.input-group-addon
-{
-    padding: 6px 12px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1;
-    text-align: center;
-    border: 1px solid darkgrey;
-    border-radius: 4px;
+/* Styles for links with a dashed underline by default
+   and changes to a solid underline on hover */
+.dashed-underline {
+    text-decoration: none;
+    border-bottom: 1px dashed;
+}
+.dashed-underline:hover {
+    border-bottom: 1px solid;
 }
 
-.input-group-addon .fa
-{
-    font-size: 18px;
+/* Applies underline to a link on hover */
+.underline-hover:hover {
+    text-decoration: underline;
 }
 
-.input-group .form-control
-{
-    position:relative;
-    z-index: 2;
-    float:left;
-    /*width: 100%;*/
-    margin-bottom: 0;
+/* Main Content */
+
+/* Nav Bar */
+#navSearchForm {
+    position: relative;
 }
 
-.input-group .form-control:last-child
-{
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+#navSearchGroup {
+    width: 0;
+    transition: width 0.3s ease-out, opacity 0.3s ease-out;
+    padding: 0;
+    opacity: 0;
 }
 
-
-
-.login
-{
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;
-    background-color: lightgrey;
-    border-radius: .3rem;
+#navSearchDropdown {
+    position: absolute;
 }
 
-.login input
-{
-    background-color: white;
-    border-color: darkgrey;
-    border-radius: .4em;
+#navSearchForm:hover #navSearchGroup,
+#navSearchForm:focus-within #navSearchGroup {
+    width: 200px;
+    opacity: 1;
+}
+
+@media (max-width: 991.98px) {
+    #navSearchForm {
+        width: 100%;
+    }
+
+    #navSearchGroup {
+        width: 100%;
+        opacity: 1;
+        transition: none
+    }
+
+    #navSearchForm:hover #navSearchGroup,
+    #navSearchForm:focus-within #navSearchGroup {
+        width: 100%;
+    }
+}
+
+/* Base style for header */
+main {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Header Styles */
+
+/* Home Page Style */
+
+/* Carousel Styles */
+
+/* Base styles for the carousel captions */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: 50px;
+    margin-bottom: 50px;
+}
+
+/* Adjusts font size of the heading in the carousel caption */
+.carousel-caption h1 {
+    font-size: 50px;
+}
+
+/* Adjusts font size of the paragraph in the carousel caption */
+.carousel-caption p {
+    font-size: 25px;
+}
+
+/* Styles for the link button inside the carousel caption */
+.carousel-caption a.btn {
+    font-size: 20px;
+    border-radius: 0;
+}
+
+/* Home Link Cards */
+
+.home-card {
+    text-decoration: none;
+    color: inherit;
+    aspect-ratio: 1 / 1;
+    border-radius: 0;
+}
+
+.home-card:hover {
+    background-color: #f8f9fa;
+}
+
+/* Team Page Styles */
+
+/* Sets a maximum width for profile images on the Team page */
+.img-max-width {
+    max-width: 300px;
+}
+
+/* Modal Styling */
+
+/* Ensures text in modals breaks and wraps correctly */
+.modal-body {
+    word-break: break-word; /* Allows long words to break and wrap */
+    overflow-wrap: break-word; /* Ensures text wraps in the container */
+}
+
+/* Card Styles */
+
+/* Styles for cards on hover */
+.team-card:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+/* Welcome Message Styles */
+
+#navMessageWrapper {
+    overflow: hidden;
+}
+
+#navMessage {
+    animation: slideInOut 5s forwards;
+    background-color: #d1e7dd;
+    color: #0f5132;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    border: 1px solid #badbcc;
+}
+
+/* Form Field Styles */
+
+/* Red border for invalid field */
+.invalid-field{
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+.invalid-field:focus{
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+/* Search form styles */
+.search-input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.search-button {
+    border-radius: 0 999px 999px 0;
+}
+
+.down-button {
+    border-radius: 999px 0 0 999px;
+}
+
+.up-button {
+    border-radius: 0 999px 999px 0;
+}
+
+/* Popover Styles */
+
+/* Invalid field popover */
+.popover-invalid {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.popover-body-invalid {
+    color: #ffffff;
+}
+
+/* Animation Keyframes */
+
+/* Defines a 'fadeIn' animation for elements */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInOut {
+    0% {
+        transform: translateX(100%);
+    }
+    20% {
+        transform: translateX(0);
+    }
+    80% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes slideInOut {
+    0% {
+        transform: translateX(100%);
+    }
+    20% {
+        transform: translateX(0);
+    }
+    80% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Image Thumbnail sizing and display */
+
+.thumbnail img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.thumbnail {
+    padding: 10px;
+}
+
+.full-width-image {
     width: 100%;
+    height: auto;
+    display: block;
 }

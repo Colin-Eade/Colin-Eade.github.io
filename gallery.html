@@ -1,0 +1,67 @@
+<!--
+    Name: Colin Eade (ID:100329105) and Megan Clarke (ID:100881229).
+    Date: February 22, 2024
+    File: gallery.html
+    Description: This is the gallery page for the Harmony Hub website. It is the place for Ajax injection
+                    of data from the events.json file. Image thumbnails and modals are created dynamically
+                    in the app.js file.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Harmony Hub - Gallery</title>
+
+    <!-- CSS Section -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="data/events.json">
+    <link rel="stylesheet" href="./content/app.css">
+
+</head>
+
+<!-- Ensures the body fills the whole viewport -->
+<body class="d-flex flex-column min-vh-100">
+
+    <header></header>
+
+    <!-- Main Content -->
+    <!-- Ensures footer is forced to bottom of viewport -->
+    <main class="container flex-grow-1">
+        <h1 class="mt-3 text-center">Gallery</h1>
+        <p class="mt-3 text-center">A collection of photos from past community events. Click on an image to see details.</p>
+        <div class="mt-3 d-flex justify-content-center">
+            <div class="dropdown">
+                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-sort"></i> Sort Images By</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#">Newest First</a></li>
+                    <li><a class="dropdown-item" href="#">Oldest First</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Thumbnail Container-->
+        <div class="row g-1 m-3" id="thumbnails">
+
+        </div>
+        <!-- Modal Container-->
+        <div id="modalContainer">
+
+        </div>
+
+
+
+    </main>
+
+    <footer></footer>
+
+    <!-- Scripting Section -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/app.js"></script>
+
+</body>
+
+</html>

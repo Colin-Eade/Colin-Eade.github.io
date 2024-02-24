@@ -1,8 +1,16 @@
+<!--
+    Name: Colin Eade (ID:100329105) and Megan Clarke (ID:100881229).
+    Date: February 24, 2024.
+    File: login.html
+    Description: This is the Login page for the Harmony Hub website.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Harmony Hub - Login</title>
 
     <!-- CSS Section -->
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -10,65 +18,66 @@
     <link rel="stylesheet" href="./content/app.css">
 
 </head>
-<body>
 
-    <header>
-    </header>
+<!-- Ensures the body fills the whole viewport -->
+<body class="d-flex flex-column min-vh-100">
 
-    <main class="container" id="mainContent">
-        <div class="row">
-            <div class="offset-md-3 col-md-6 col-sm-12">
-                <div class="login" id="contentArea">
-                    <h1 class="display-4">Login</h1>
+    <header></header>
 
-                    <form id="loginForm" novalidate>
+    <!-- Main Content -->
+    <!-- Ensures footer is forced to bottom of viewport -->
+    <main class="container flex-grow-1">
+        <h1 class="mt-3 text-center">Login</h1>
 
-                        <div id="messageArea"></div>
+        <div class="mt-3 row justify-content-center">
+            <div class="col-md-8 col-lg-4">
+                <div class="card bg-body-tertiary border-0">
+                    <div class="card-body">
+                        <form id="loginForm">
 
-                        <div class="form-group mb-2">
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <i class="fa fa-user"></i>
-                                </span>
-                                <input type="text" class="form-control" id="userName" name="userName"  required
-                                       value="" placeholder="Enter your username">
-                            </div>
-                        </div>
+                            <div id="messageArea"></div>
 
-                        <div class="form-group mb-2">
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <i class="fa fa-lock"></i>
-                                </span>
-                                <input type="password" class="form-control" id="password" name="password"  required
-                                       value="" placeholder="Enter your password">
+                            <div class="mb-3">
+                                <label for="userName" class="form-label">Username</label>
+                                <div class="input-group">
+                                    <input id="userName" type="text" class="form-control" name="userName">
+                                </div>
                             </div>
 
-                        </div>
-                        <div class="text-end">
-                            <button id="loginButton" type="button" class="btn btn-primary btn-lg">
-                                <i class="fas fa-sign-in-alt"></i> Login</button>
-                            <button id="cancelButton" type="button" class="btn btn-warning btn-lg">
-                                <i class="fas fa-undo"></i> Cancel</button>
-                        </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <div class="input-group">
+                                    <input id="password" type="password" class="form-control" name="password">
+                                </div>
+                            </div>
 
-                    </form>
+                            <button id="loginButton" type="button" class="col-12 btn btn-primary mb-3">
+                                <i class="fa-solid fa-lock"></i> Login
+                            </button>
 
+                            <div class="text-center text-body-secondary small border-top py-2">
+                                Don't have an account? <br>
+                                <a href="register.html" class="text-body-secondary dashed-underline">Register here</a>
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
-                <p class="text-center text-muted small">
-                    Don't have an account?
-                    <a href="register.html">Register Here!</a>
-                </p>
             </div>
         </div>
+
     </main>
+
+    <footer></footer>
 
     <!-- Scripting Section -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/initializePopovers.js"></script>
     <script src="./scripts/namespace.js"></script>
     <script src="./scripts/user.js"></script>
     <script src="./scripts/app.js"></script>
 
 </body>
+
 </html>

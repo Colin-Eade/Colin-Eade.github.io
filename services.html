@@ -1,0 +1,138 @@
+<!--
+    Name: Colin Eade (ID:100329105) and Megan Clarke (ID:100881229).
+    Date: January 26, 2024.
+    File: services.html
+    Description: This this is the services page for the Harmony Hub website that lists available services. It utilizes
+    icons, and a boostrap accordion layout to dynamically display additional information to the user.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Harmony Hub - Services</title>
+
+    <!-- CSS Section -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="./content/app.css">
+
+</head>
+
+<!-- Ensures the body fills the whole viewport -->
+
+<body class="d-flex flex-column min-vh-100">
+
+    <header></header>
+
+    <!-- Main Content -->
+    <!-- Ensures footer is forced to bottom of viewport -->
+    <main class="container flex-grow-1">
+
+        <h1 class="mt-3 text-center">Our Services</h1>
+
+        <div class="mt-5 accordion accordion-flush" id="servicesAccordion">
+            <!-- Youth Programs -->
+            <div class="accordion-item pb-3">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <i class="fa-solid fa-children"></i>&nbsp;Youth Programs
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne">
+                    <div class="accordion-body">
+                        Youth Services at our community center are designed to inspire and empower the next generation.
+                        We offer a wide range of engaging and educational programs that cater to the unique needs
+                        and interests of young individuals. From after-school tutoring and mentoring to fun-filled
+                        arts and sports activities, our Youth Services aim to provide a nurturing environment where
+                        children and teenagers can learn, grow, and develop valuable life skills. Our dedicated team
+                        of mentors and educators is committed to fostering creativity, teamwork, and a sense of
+                        community among our youth. We believe that investing in our young minds today will shape a
+                        brighter and more promising future for our entire community.
+                    </div>
+                </div>
+            </div>
+            <!-- Seniors Programs -->
+            <div class="accordion-item py-3">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <i class="fa-solid fa-person-cane"></i>&nbsp;Seniors Programs
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo">
+                    <div class="accordion-body">
+                        At our community center, we take pride in offering a comprehensive range of Senior Services
+                        that prioritize the well-being and happiness of our senior citizens. Our dedicated programs
+                        are tailored to meet the unique needs and interests of older adults in our community. From
+                        engaging social activities and wellness workshops to health screenings and transportation
+                        assistance, our Senior Services aim to enrich the lives of our senior members. We provide a
+                        welcoming space where seniors can build meaningful friendships, stay active and healthy,
+                        and continue their lifelong learning journey. Our compassionate team is committed to creating
+                        an inclusive and supportive environment that honors the wisdom, experience, and contributions
+                        of our cherished seniors. Together, we celebrate the vibrant spirit of aging gracefully.
+                    </div>
+                </div>
+            </div>
+            <!-- Arts and STEM -->
+            <div class="accordion-item py-3">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <i class="fa-solid fa-brain"></i>&nbsp;Arts and STEM
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree">
+                    <div class="accordion-body">
+                        At our community center, we are passionate about fostering creativity, curiosity, and
+                        innovation through our Arts and STEM (Science, Technology, Engineering, and Mathematics)
+                        programs. We believe in the power of artistic expression and hands-on exploration to inspire
+                        individuals of all ages. Our Arts programs offer a diverse range of opportunities, from visual
+                        arts classes and music lessons to theater productions and cultural exhibitions. Additionally,
+                        our STEM programs empower participants to embrace the exciting world of science and technology,
+                        with coding workshops, robotics competitions, and science fairs. Whether you have a budding
+                        artist or a future scientist in your family, our Arts and STEM initiatives provide a nurturing
+                        space where individuals can discover their passions, develop essential skills, and ignite their
+                        imaginations. Join us in celebrating the fusion of creativity and innovation!
+                    </div>
+                </div>
+            </div>
+            <!-- Fitness and Wellness -->
+            <div class="accordion-item py-3">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <i class="fa-solid fa-heart-pulse"></i>&nbsp;Fitness and Wellness
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour">
+                    <div class="accordion-body">
+                        At our community center, we are committed to promoting holistic well-being through our
+                        Fitness and Wellness Services. We understand the importance of maintaining a healthy body
+                        and mind, and our programs are designed to empower individuals on their wellness journeys.
+                        Our state-of-the-art fitness center offers a variety of exercise classes, from yoga and
+                        aerobics to strength training and mindfulness sessions. We also provide wellness workshops
+                        that focus on nutrition, stress management, and healthy living. Our dedicated instructors
+                        and trainers are here to support you in achieving your fitness goals, whether you're looking
+                        to build strength, increase flexibility, or simply de-stress. We believe that a healthy
+                        lifestyle is the foundation for a fulfilling life, and our Fitness and Wellness Services are
+                        here to help you thrive.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer></footer>
+
+    <!-- Scripting Section -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/app.js"></script>
+
+</body>
+
+</html>

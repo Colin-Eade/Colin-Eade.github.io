@@ -1,8 +1,17 @@
+<!--
+    Name: Colin Eade (ID:100329105) and Megan Clarke (ID:100881229).
+    Date: January 26, 2024.
+    File: contact.html
+    Description: This this is the Contact page for the Harmony Hub website. It includes a form that user's can submit
+    to provide feedback to the organization.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Contact Us</title>
+    <title>Harmony Hub - Contact Us</title>
 
     <!-- CSS Section -->
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -10,70 +19,169 @@
     <link rel="stylesheet" href="./content/app.css">
 
 </head>
-<body>
 
-    <header>
-    </header>
+<!-- Ensures the body fills the whole viewport -->
+<body class="d-flex flex-column min-vh-100">
 
-    <div class="container">
-        <h1 class="mb-5">Contact Us</h1>
+    <header></header>
 
-        <div id="messageArea"></div>
+    <!-- Main Content -->
+    <!-- Ensures footer is forced to bottom of viewport -->
+    <main class="container flex-grow-1">
+        <h1 class="mt-3 text-center">Contact Us</h1>
 
-        <div class="row justify-content-lg-center g-3">
+        <div class="row justify-content-center mt-3">
+            <div class="col-12">
+                <div class="card bg-body-tertiary border-0">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6 px-lg-5">
+                                <form id="contactForm">
+                                    <div class="mb-3">
+                                        <label for="fullName" class="form-label">Full Name</label>
+                                        <div class="input-group">
+                                            <input id="fullName" type="text" class="form-control" name="fullName">
+                                        </div>
+                                    </div>
 
-            <form class="col-lg-6 col-md-10 col-sm-10">
+                                    <div class="mb-3">
+                                        <label for="emailAddress" class="form-label">Email Address</label>
+                                        <div class="input-group">
+                                            <input id="emailAddress" type="email" class="form-control" name="emailAddress">
+                                        </div>
+                                    </div>
 
-                <div class="input-group mb-3">
-                    <span  class="input-group-text">Full Name</span>
-                    <input id="fullName" name="fullName" type="text" class="form-control"
-                           aria-describedby="Full Name" aria-label="Full Name Input" required>
+                                    <div class="mb-3">
+                                        <label for="subject" class="form-label">Subject (optional)</label>
+                                        <div class="input-group">
+                                            <input id="subject"  type="text" class="form-control" name="subject">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Message</label>
+                                        <div class="input-group">
+                                            <textarea id="message" class="form-control" name="message" rows="4"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <button id="formSubmit" type="button" class="col-12 btn btn-primary mb-3">
+                                        <i class="fa-solid fa-envelope" ></i> Submit
+                                    </button>
+
+                                </form>
+                            </div>
+                            <div class="col-lg-6 px-lg-5 d-flex flex-column">
+                                <div class="row flex-grow-1 d-flex align-items-center border-bottom mb-3">
+                                    <p>
+                                        Your feedback and inquiries are important to us. Whether you have questions, need assistance,
+                                        or wish to share your experiences, we are here to listen and help. Please feel free to reach out to us
+                                        using the form below for a prompt response. Alternatively, if you prefer more direct communication, our
+                                        contact information is provided at the bottom of this page. We value your input and look forward to hearing
+                                        from you!
+                                    </p>
+                                </div>
+                                <div class="row flex-grow-1 d-flex align-items-center">
+                                    <p><b>Contact Information</b><br><br>
+                                        <b>Email:</b> support@harmonyhub.com<br>
+                                        <b>Phone:</b> (905) 426-7669<br>
+                                        <b>Address:</b> 123 Harmony Rd, Harmony City, ON L1N 4E2
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="input-group mb-3">
-                    <span  class="input-group-text">Contact Number</span>
-                    <input id="contactNumber" name="contactNumber" type="tel" class="form-control"
-                           aria-describedby="Contact Name" aria-label="Contact Name Input" required>
-                </div>
-
-                <div class="input-group mb-3">
-                    <span  class="input-group-text">Email Address</span>
-                    <input id="emailAddress" name="emailAddress" type="email" class="form-control"
-                           aria-describedby="Email Address" aria-label="Email Address Input" required>
-                </div>
-
-                <div class="input-group mb-3">
-                    <span  class="input-group-text">Your Message</span>
-                    <input id="message" name="message" class="form-control"
-                           aria-describedby="Message Area" aria-label="Message Area Input">
-                </div>
-
-                <div class="input-group mb-3">
-                    <input id="subscribeCheck" type="checkbox" class="form-check-input">
-                    <label class="form-check-label" for="subscribeCheck">Subscribe to our contact list</label>
-                </div>
-
-                <button id="sendButton" type="submit" class="btn btn-primary">
-                    <i class="fa-solid fa-envelope"></i> Submit</button>
-                <button id="cancelButton" type="reset" class="btn btn-warning">
-                    <i class="fa-solid fa-rotate-left"></i> Cancel</button>
-
-            </form>
-
-            <div class="col-lg-4 col-md-4">
-                <a href="contact-list.html" class="btn btn-primary"><i class="fa-solid fa-users"></i> Show contact list</a>
             </div>
-
         </div>
 
-    </div>
+        <div id="feedBackArea" class="row justify-content-center mt-3">
+            <div class="col-12 col-lg-6">
+                <div id="feedBackCard" class="card bg-body-tertiary border-0">
+                    <div class="card-header text-center pt-3">
+                        <h5>Rate your experience with Harmony Hub!</h5>
+                    </div>
+                    <div id="feedBackBody" class="card-body">
+                        <div id="feedBackMessage"></div>
+                        <form id="feedBackForm" class="row g-3 align-items-center">
+                            <div class="col-auto">
+                                <select class="form-select" id="feedBackDropdown">
+                                    <option value="0" selected>Rating</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" id="feedBackComment"
+                                       placeholder="Leave a comment (optional)">
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" id="feedbackSubmit" class="btn btn-primary">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="contactModal" data-bs-backdrop="static" data-bs-keyboard="false"
+             tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalLabel">Contact Form Submission Confirmation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Full Name:</strong> <span id="modalFullName"></span></p>
+                        <p><strong>Email Address:</strong> <span id="modalEmailAddress"></span></p>
+                        <p><strong>Subject:</strong> <span id="modalSubject"></span></p>
+                        <p><strong>Message:</strong> <span id="modalMessage"></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="modalCancel" type="button" class="btn btn-secondary"
+                                data-bs-dismiss="modal"><i class="fa-solid fa-rotate-left"></i> Cancel</button>
+                        <button id="modalSubmit" type="button" class="btn btn-primary">
+                            <i class="fa-solid fa-envelope" ></i> Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="redirectModal" data-bs-backdrop="static" data-bs-keyboard="false"
+             tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="redirectModalLabel">Redirecting</h5>
+                    </div>
+                    <div class="modal-body text-center">
+                        <p>Thank you for your submission!</p>
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="mt-2">You will be redirected in <strong><span id="redirectCounter"></span></strong>
+                            seconds.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer></footer>
 
     <!-- Scripting Section -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="./scripts/namespace.js"></script>
-    <script src="./scripts/contact.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/lodash/lodash.min.js"></script>
     <script src="./scripts/app.js"></script>
 
 </body>
+
 </html>
